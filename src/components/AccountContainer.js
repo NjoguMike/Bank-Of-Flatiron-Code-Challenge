@@ -44,9 +44,20 @@ function AccountContainer() {
     }
 
     function handleDelete(toDelete){
-      const update = display.filter(data => data.id !== parseInt(toDelete))
+      const key = parseInt(toDelete)
+      const update = display.filter(data => data.id !== key)
 
-      console.log(toDelete, update)
+        fetch(`http://localhost:8001/transactions/${key}`,
+        {
+          method:"DELETE",
+          headers:{
+            "Content-Type":"application/json"
+          }
+        }
+        )
+        .then(response => response.json())
+        .then(()=>fetchTransactions())
+      
     }
 
   return (

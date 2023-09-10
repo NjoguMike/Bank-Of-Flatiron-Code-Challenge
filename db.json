@@ -22,13 +22,6 @@
       "amount": -10.55
     },
     {
-      "id": 4,
-      "date": "2019-12-04",
-      "description": "Sunglasses, Urban Outfitters",
-      "category": "Fashion",
-      "amount": -24.99
-    },
-    {
       "id": 5,
       "date": "2019-12-06",
       "description": "Venmo, Alice Pays you for Burrito",
@@ -99,13 +92,6 @@
       "amount": "23000"
     },
     {
-      "id": 15,
-      "date": "2023-09-08",
-      "description": "Receipt from landlord",
-      "category": "rent",
-      "amount": 0
-    },
-    {
       "id": 16,
       "date": "2023-09-07",
       "description": "Receipt from landlord",
@@ -120,13 +106,6 @@
       "amount": "23450"
     },
     {
-      "id": 18,
-      "date": "",
-      "description": "",
-      "category": "",
-      "amount": 0
-    },
-    {
       "id": 19,
       "date": "2023-09-13",
       "description": "Receipt from landlord",
@@ -139,13 +118,6 @@
       "description": "Receipt from landlord",
       "category": "groceries",
       "amount": "234"
-    },
-    {
-      "id": 21,
-      "date": "2023-09-13",
-      "description": "Receipt from landlord",
-      "category": "rent",
-      "amount": "0342"
     }
   ]
 }
