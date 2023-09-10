@@ -12,7 +12,9 @@ function AccountContainer() {
   const fetchTransactions = ()=>{
     fetch("http://localhost:8001/transactions")
     .then(response => response.json())
-    .then(transactionsData => setTransData(transactionsData))
+    .then(transactionsData => {
+      setTransData(transactionsData)
+      setDisplay(transactionsData)})
   }
   
   useEffect(
@@ -36,7 +38,7 @@ function AccountContainer() {
     }
     
     function handleDisplay(search){
-
+      
       const filter = transData.filter(trans => trans.category.includes(search))
       const toDisplay = filter ? setDisplay(filter) : setDisplay(transData)
 
