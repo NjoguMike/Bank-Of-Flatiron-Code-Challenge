@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Transaction from "./Transaction";
 
-function Search({ transactions , handleFilter}) {
+function Search({ handleFilter }) {
 
   const [ searchItem , setSearchItem ] = useState("")
   
@@ -9,9 +9,7 @@ function Search({ transactions , handleFilter}) {
   function handleChange(event){
     const search = event.target.value
     setSearchItem(search)
-
-    const filter = transactions.filter(trans => trans.category.includes(search))
-    handleFilter(filter)
+    handleFilter(search)
   }
 
   return (

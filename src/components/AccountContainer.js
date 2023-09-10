@@ -7,6 +7,7 @@ function AccountContainer() {
 
   const [ transData , setTransData ] = useState([])
   const [ display , setDisplay ] = useState(transData)
+  // const [ filters , setFilter ] = useState("")
 
   const fetchTransactions = ()=>{
     fetch("http://localhost:8001/transactions")
@@ -34,17 +35,18 @@ function AccountContainer() {
         .then(() => fetchTransactions() )
     }
     
-    function handleDisplay(display){
-      setTransData(display)
-      console.log(display)
-      
+    function handleDisplay(search){
+
+      const filter = transData.filter(trans => trans.category.includes(search))
+      const toDisplay = filter ? setDisplay(filter) : setDisplay(transData)
+
     }
 
   return (
     <div>
       <Search transactions={transData} handleFilter={handleDisplay}/>
       <AddTransactionForm postData={handleForm}/>
-      <TransactionsList currTransactions={transData}/>
+      <TransactionsList currTransactions={display}/>
     </div>
   );
 }
