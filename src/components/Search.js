@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Transaction from "./Transaction";
 
 function Search({ handleFilter }) {
 

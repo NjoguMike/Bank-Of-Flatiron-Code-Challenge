@@ -6,7 +6,7 @@ import AddTransactionForm from "./AddTransactionForm";
 function AccountContainer() {
 
   const [ transData , setTransData ] = useState([])
-  const [ display , setDisplay ] = useState(transData)
+  const [ display , setDisplay ] = useState([])
   // const [ filters , setFilter ] = useState("")
 
   const fetchTransactions = ()=>{
@@ -39,7 +39,7 @@ function AccountContainer() {
     
     function handleDisplay(search){
       
-      const filter = transData.filter(trans => trans.category.includes(search))
+      const filter = transData.filter(trans => trans.description.includes(search))
       const toDisplay = filter ? setDisplay(filter) : setDisplay(transData)
 
     }
