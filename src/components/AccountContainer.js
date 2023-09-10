@@ -7,7 +7,6 @@ function AccountContainer() {
 
   const [ transData , setTransData ] = useState([])
   const [ display , setDisplay ] = useState([])
-  // const [ filters , setFilter ] = useState("")
 
   const fetchTransactions = ()=>{
     fetch("http://localhost:8001/transactions")
@@ -44,11 +43,17 @@ function AccountContainer() {
 
     }
 
+    function handleDelete(toDelete){
+      const update = display.filter(data => data.id !== parseInt(toDelete))
+
+      console.log(toDelete, update)
+    }
+
   return (
     <div>
       <Search transactions={transData} handleFilter={handleDisplay}/>
       <AddTransactionForm postData={handleForm}/>
-      <TransactionsList currTransactions={display}/>
+      <TransactionsList currTransactions={display} deleteFunc={handleDelete}/>
     </div>
   );
 }

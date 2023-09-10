@@ -1,9 +1,9 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({ currTransactions }) {
+function TransactionsList({ currTransactions , deleteFunc }) {
 
-  const transaction = currTransactions.map(data => <Transaction key={data.id} details={data} />)
+  const transaction = currTransactions.map(data => <Transaction key={data.id} details={data} toDelete={deleteFunc}/>)
 
   return (
     <table className="ui celled striped padded table">
